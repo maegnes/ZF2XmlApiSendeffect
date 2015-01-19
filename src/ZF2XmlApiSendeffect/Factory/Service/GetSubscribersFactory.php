@@ -1,16 +1,16 @@
 <?php
 
-namespace XmlApiSendeffect\Factory\Service;
+namespace ZF2XmlApiSendeffect\Factory\Service;
 
 /**
  * Factory Class for the GetSubscribers Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Factory\Service
+ * @package ZF2XmlApiSendeffect\Factory\Service
  */
 class GetSubscribersFactory extends AbstractServiceFactory
 {
     protected $class = 'GetSubscribers';
 
-    protected $responseClass = '\\XmlApiSendeffect\\Api\\Response\\GetSubscribersResponse';
+    protected $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\GetSubscribersResponse';
 }

@@ -1,15 +1,19 @@
 <?php
 
-namespace XmlApiSendeffect\Service;
+namespace ZF2XmlApiSendeffect\Service;
 
 /**
- * GetSubscribers Service
+ * DeleteSubscriber Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Service
+ * @package ZF2XmlApiSendeffect\Service
  */
-class GetSubscribers extends AbstractService
+class DeleteSubscriber extends AbstractService
 {
+    /**
+     * @var string
+     */
+    public $emailAddress = null;
 
     /**
      * @var int
@@ -17,16 +21,11 @@ class GetSubscribers extends AbstractService
     public $mailingList = null;
 
     /**
-     * @var string
-     */
-    public $emailAddress = null;
-
-    /**
      * Init default fields
      */
     public function init()
     {
-        $this->setRequestMethod('GetSubscribers');
+        $this->setRequestMethod('DeleteSubscriber');
         $this->setRequestType('subscribers');
     }
 
@@ -44,10 +43,8 @@ class GetSubscribers extends AbstractService
             'requesttype'   => $this->getRequestType(),
             'requestmethod' => $this->getRequestMethod(),
             'details'       => array(
-                'searchinfo' => array(
-                    'List' => $this->getMailingList(),
-                    'Email'  => $this->getEmailAddress()
-                )
+                'emailaddress' => $this->getEmailAddress(),
+                'mailinglist'  => $this->getMailingList(),
             )
         );
         return $result;

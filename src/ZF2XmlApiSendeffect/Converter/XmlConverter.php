@@ -1,6 +1,6 @@
 <?php
 
-namespace XmlApiSendeffect\Converter;
+namespace ZF2XmlApiSendeffect\Converter;
 
 use LSS\Array2XML;
 
@@ -8,7 +8,7 @@ use LSS\Array2XML;
  * Converts input into a xml string
  *
  * @author Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Converter
+ * @package ZF2XmlApiSendeffect\Converter
  */
 class XmlConverter implements ConverterInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace XmlApiSendeffect\Service;
+namespace ZF2XmlApiSendeffect\Service;
 
-use XmlApiSendeffect\Api\Request\RequestInterface;
-use XmlApiSendeffect\Api\Response\ResponseInterface;
-use XmlApiSendeffect\Converter\ConverterInterface;
+use ZF2XmlApiSendeffect\Api\Request\RequestInterface;
+use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
+use ZF2XmlApiSendeffect\Converter\ConverterInterface;
 use InvalidArgumentException;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
@@ -13,7 +13,7 @@ use Zend\EventManager\EventManagerInterface;
  * Base class for all available API services
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Service
+ * @package ZF2XmlApiSendeffect\Service
  */
 abstract class AbstractService implements EventManagerAwareInterface
 {
@@ -74,10 +74,10 @@ abstract class AbstractService implements EventManagerAwareInterface
      */
     public function __construct($userName, $userToken) {
         if (empty($userName)) {
-            throw new InvalidArgumentException('No username for the XmlApiSendeffect given!');
+            throw new InvalidArgumentException('No username for the ZF2XmlApiSendeffect given!');
         }
         if (empty($userToken)) {
-            throw new InvalidArgumentException('No usertoken for the XmlApiSendeffect given!');
+            throw new InvalidArgumentException('No usertoken for the ZF2XmlApiSendeffect given!');
         }
         $this->setUserName($userName);
         $this->setUserToken($userToken);

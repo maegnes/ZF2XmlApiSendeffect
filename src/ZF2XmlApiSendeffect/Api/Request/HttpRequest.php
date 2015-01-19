@@ -1,6 +1,6 @@
 <?php
 
-namespace XmlApiSendeffect\Api\Request;
+namespace ZF2XmlApiSendeffect\Api\Request;
 
 use Zend\Http\Client;
 use XmlApiSendeffect\Api\Response\ResponseInterface;
@@ -10,7 +10,7 @@ use Exception;
  * Class Request
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Api
+ * @package ZF2XmlApiSendeffect\Api
  */
 class HttpRequest implements RequestInterface
 {

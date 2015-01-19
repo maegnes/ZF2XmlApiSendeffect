@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Converter;
+namespace ZF2XmlApiSendeffect\Converter;
 
 /**
  * Converter interface
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Converter
+ * @package ZF2XmlApiSendeffect\Converter
  */
 interface ConverterInterface
 {

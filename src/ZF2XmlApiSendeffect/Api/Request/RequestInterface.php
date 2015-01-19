@@ -1,14 +1,14 @@
 <?php
 
-namespace XmlApiSendeffect\Api\Request;
+namespace ZF2XmlApiSendeffect\Api\Request;
 
-use XmlApiSendeffect\Api\Response\ResponseInterface;
+use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
 
 /**
  * Response Interface
  *
  * @author Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Api
+ * @package ZF2XmlApiSendeffect\Api
  */
 interface RequestInterface
 {

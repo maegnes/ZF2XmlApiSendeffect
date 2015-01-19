@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Factory\Service;
+namespace ZF2XmlApiSendeffect\Factory\Service;
 
 /**
  * Factory Class for the DeleteSubscriber Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Factory\Service
+ * @package ZF2XmlApiSendeffect\Factory\Service
  */
 class DeleteSubscriberFactory extends AbstractServiceFactory
 {

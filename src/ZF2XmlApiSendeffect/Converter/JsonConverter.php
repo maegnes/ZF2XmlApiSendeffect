@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Converter;
+namespace ZF2XmlApiSendeffect\Converter;
 
 /**
  * Converts input into a json string - sendeffect is not supporting json - build for future cases
  *
  * @author Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Converter
+ * @package ZF2XmlApiSendeffect\Converter
  */
 class JsonConverter implements ConverterInterface
 {

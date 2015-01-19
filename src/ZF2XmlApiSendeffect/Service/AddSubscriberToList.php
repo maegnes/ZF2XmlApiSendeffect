@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Service;
+namespace ZF2XmlApiSendeffect\Service;
 
 /**
  * AddSubscriberToList Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Service
+ * @package ZF2XmlApiSendeffect\Service
  */
 class AddSubscriberToList extends AbstractService
 {

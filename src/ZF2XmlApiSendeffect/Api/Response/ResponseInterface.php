@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Api\Response;
+namespace ZF2XmlApiSendeffect\Api\Response;
 
 /**
  * Response Interface
  *
  * @author Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Api
+ * @package ZF2XmlApiSendeffect\Api
  */
 interface ResponseInterface
 {

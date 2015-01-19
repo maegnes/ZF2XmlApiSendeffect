@@ -1,6 +1,6 @@
 <?php
 
-namespace XmlApiSendeffect;
+namespace ZF2XmlApiSendeffect;
 
 /**
  * Module.php for the SendEffect API
@@ -47,10 +47,10 @@ class Module
     {
         return array(
             'factories' => array(
-                'sendeffect_add_subscriber_to_list' => 'XmlApiSendeffect\Factory\Service\AddSubscriberToListFactory',
-                'sendeffect_delete_subscriber' => 'XmlApiSendeffect\Factory\Service\DeleteSubscriberFactory',
-                'sendeffect_get_subscribers' => 'XmlApiSendeffect\Factory\Service\GetSubscribersFactory',
-                'sendeffect_is_subscriber_on_list' => 'XmlApiSendeffect\Factory\Service\IsSubscriberOnListFactory'
+                'sendeffect_add_subscriber_to_list' => 'ZF2XmlApiSendeffect\Factory\Service\AddSubscriberToListFactory',
+                'sendeffect_delete_subscriber' => 'ZF2XmlApiSendeffect\Factory\Service\DeleteSubscriberFactory',
+                'sendeffect_get_subscribers' => 'ZF2XmlApiSendeffect\Factory\Service\GetSubscribersFactory',
+                'sendeffect_is_subscriber_on_list' => 'ZF2XmlApiSendeffect\Factory\Service\IsSubscriberOnListFactory'
             )
         );
     }

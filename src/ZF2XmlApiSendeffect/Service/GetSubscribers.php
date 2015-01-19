@@ -1,14 +1,14 @@
 <?php
 
-namespace XmlApiSendeffect\Service;
+namespace ZF2XmlApiSendeffect\Service;
 
 /**
- * IsSubscriberOnList Service
+ * GetSubscribers Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Service
+ * @package ZF2XmlApiSendeffect\Service
  */
-class IsSubscriberOnList extends AbstractService
+class GetSubscribers extends AbstractService
 {
 
     /**
@@ -26,7 +26,7 @@ class IsSubscriberOnList extends AbstractService
      */
     public function init()
     {
-        $this->setRequestMethod('IsSubscriberOnList');
+        $this->setRequestMethod('GetSubscribers');
         $this->setRequestType('subscribers');
     }
 
@@ -44,8 +44,10 @@ class IsSubscriberOnList extends AbstractService
             'requesttype'   => $this->getRequestType(),
             'requestmethod' => $this->getRequestMethod(),
             'details'       => array(
-                'emailaddress' => $this->getEmailAddress(),
-                'listids'  => $this->getMailingList()
+                'searchinfo' => array(
+                    'List' => $this->getMailingList(),
+                    'Email'  => $this->getEmailAddress()
+                )
             )
         );
         return $result;

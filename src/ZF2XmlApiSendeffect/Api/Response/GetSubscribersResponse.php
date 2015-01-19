@@ -1,12 +1,12 @@
 <?php
 
-namespace XmlApiSendeffect\Api\Response;
+namespace ZF2XmlApiSendeffect\Api\Response;
 
 /**
  * Class GetSubscribersResponse
  *
  * @author Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Api\Response
+ * @package ZF2XmlApiSendeffect\Api\Response
  */
 class GetSubscribersResponse extends BaseResponse implements ResponseInterface
 {

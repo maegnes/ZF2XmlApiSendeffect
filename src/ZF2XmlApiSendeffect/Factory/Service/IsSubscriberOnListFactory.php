@@ -1,16 +1,16 @@
 <?php
 
-namespace XmlApiSendeffect\Factory\Service;
+namespace ZF2XmlApiSendeffect\Factory\Service;
 
 /**
  * Factory Class for the GetSubscribers Service
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Factory\Service
+ * @package ZF2XmlApiSendeffect\Factory\Service
  */
 class IsSubscriberOnListFactory extends AbstractServiceFactory
 {
     protected $class = 'IsSubscriberOnList';
 
-    protected $responseClass = '\\XmlApiSendeffect\\Api\\Response\\IsSubscriberOnListResponse';
+    protected $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\IsSubscriberOnListResponse';
 }

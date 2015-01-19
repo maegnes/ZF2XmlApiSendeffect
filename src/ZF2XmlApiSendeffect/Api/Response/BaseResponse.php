@@ -1,6 +1,6 @@
 <?php
 
-namespace XmlApiSendeffect\Api\Response;
+namespace ZF2XmlApiSendeffect\Api\Response;
 
 use LSS\XML2Array;
 
@@ -8,7 +8,7 @@ use LSS\XML2Array;
  * Convert API Response to object
  *
  * @author  Magnus Buk <MagnusBuk@gmx.de>
- * @package XmlApiSendeffect\Api
+ * @package ZF2XmlApiSendeffect\Api
  */
 class BaseResponse implements ResponseInterface
 {
