@@ -3,7 +3,7 @@
 namespace ZF2XmlApiSendeffect\Api\Request;
 
 use Zend\Http\Client;
-use XmlApiSendeffect\Api\Response\ResponseInterface;
+use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
 use Exception;
 
 /**
