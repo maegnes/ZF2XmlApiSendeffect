@@ -8,7 +8,7 @@ in the application.config.php.
 
     {
         "require": {
-			"maegnes/zf2xmlapisendeffect": "dev-master"
+			"maegnes/zf2xmlapisendeffect": ">=1.0.0"
         }
     }
     
