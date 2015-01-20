@@ -17,7 +17,7 @@ Then, add the following structure to your application config:
     <?php
     return array(
         'ZF2XmlApiSendeffect' => array(
-            'apiUrl' => 'https://sendlx.com/xml.php',
+            'apiUrl' => 'The https Endpoint of the API',
             'username'  => 'Your API Username',
             'usertoken' => 'Your API Usertoken'
         )
