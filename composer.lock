@@ -4,11 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49b50f77e71196143bbdf78cc5412843",
+    "hash": "271f7b93874f1124fe1c8073d4862138",
     "packages": [
         {
             "name": "openlss/lib-array2xml",
-            "version": "dev-master",
+            "version": "0.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openlss/lib-array2xml.git",
@@ -636,9 +636,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "openlss/lib-array2xml": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
