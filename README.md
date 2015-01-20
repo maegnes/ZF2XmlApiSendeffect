@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maegnes/ZF2XmlApiSendeffect.svg?branch=master)](https://travis-ci.org/maegnes/ZF2XmlApiSendeffect)
+
 # ZF2XmlApiSendeffect
 ZF2 module which integrates the sendeffect xml api into your application
 
