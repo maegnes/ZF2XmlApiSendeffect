@@ -2,6 +2,8 @@
 
 namespace ZF2XmlApiSendeffect;
 
+require __DIR__ . '/../vendor/autoload.php';
+
 /**
  * Bootstrap class for the unit tests
  *
