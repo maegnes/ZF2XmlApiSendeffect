@@ -10,7 +10,7 @@ namespace ZF2XmlApiSendeffect\Factory\Service;
  */
 class GetSubscribersFactory extends AbstractServiceFactory
 {
-    protected $class = 'GetSubscribers';
+    public $class = 'GetSubscribers';
 
-    protected $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\GetSubscribersResponse';
+    public $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\GetSubscribersResponse';
 }

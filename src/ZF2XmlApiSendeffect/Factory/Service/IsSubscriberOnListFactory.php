@@ -10,7 +10,7 @@ namespace ZF2XmlApiSendeffect\Factory\Service;
  */
 class IsSubscriberOnListFactory extends AbstractServiceFactory
 {
-    protected $class = 'IsSubscriberOnList';
+    public $class = 'IsSubscriberOnList';
 
-    protected $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\IsSubscriberOnListResponse';
+    public $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\IsSubscriberOnListResponse';
 }

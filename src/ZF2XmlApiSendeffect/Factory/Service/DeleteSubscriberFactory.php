@@ -10,5 +10,5 @@ namespace ZF2XmlApiSendeffect\Factory\Service;
  */
 class DeleteSubscriberFactory extends AbstractServiceFactory
 {
-    protected $class = 'DeleteSubscriber';
+    public $class = 'DeleteSubscriber';
 }

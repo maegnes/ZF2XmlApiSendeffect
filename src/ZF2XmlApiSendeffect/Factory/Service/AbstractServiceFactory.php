@@ -17,21 +17,21 @@ class AbstractServiceFactory implements FactoryInterface
      *
      * @var string
      */
-    protected $namespace = '\\ZF2XmlApiSendeffect\\Service\\';
+    public $namespace = '\\ZF2XmlApiSendeffect\\Service\\';
 
     /**
      * Name of the class to be created. Must be overwritten in the child class
      *
      * @var string
      */
-    protected $class = '';
+    public $class = '';
 
     /**
      * Used Response class - can be overwritten in the child classes
      *
      * @var string
      */
-    protected $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\BaseResponse';
+    public $responseClass = '\\ZF2XmlApiSendeffect\\Api\\Response\\BaseResponse';
 
     /**
      * Create service

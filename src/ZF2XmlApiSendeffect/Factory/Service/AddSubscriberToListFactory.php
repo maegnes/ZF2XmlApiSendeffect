@@ -10,5 +10,5 @@ namespace ZF2XmlApiSendeffect\Factory\Service;
  */
 class AddSubscriberToListFactory extends AbstractServiceFactory
 {
-    protected $class = 'AddSubscriberToList';
+    public $class = 'AddSubscriberToList';
 }
