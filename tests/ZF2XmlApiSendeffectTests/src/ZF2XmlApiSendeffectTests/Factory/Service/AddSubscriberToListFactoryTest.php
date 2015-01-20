@@ -11,7 +11,7 @@ use ZF2XmlApiSendeffect\Service\AddSubscriberToList;
  *
  * @package ZF2XmlApiSendeffectTest\Factory\Service
  */
-class AddSubscriberToListTest extends PHPUnit_Framework_TestCase
+class AddSubscriberToListFactoryTest extends PHPUnit_Framework_TestCase
 {
 
     /**
