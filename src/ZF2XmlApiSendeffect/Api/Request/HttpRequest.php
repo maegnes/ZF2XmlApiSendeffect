@@ -4,7 +4,7 @@ namespace ZF2XmlApiSendeffect\Api\Request;
 
 use Zend\Http\Client;
 use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
-use Exception;
+use InvalidArgumentException;
 
 /**
  * Class Request
@@ -45,20 +45,21 @@ class HttpRequest implements RequestInterface
      * Send the given data to the API and return the Response Object
      *
      * @param $data
-     * @throws Exception
+     * @throws InvalidArgumentException
      * @return ResponseInterface
      */
     public function send($data)
     {
         if (is_null($this->getUrl())) {
-            throw new Exception('No XmlApiSendEffect URL is given!');
+            throw new InvalidArgumentException('No XmlApiSendEffect URL is given!');
         }
         $client = $this->getClient();
         $client->setMethod('POST');
         $client->setRawBody($data);
         $client->setOptions(array('sslverifypeer' => false));
         $client->send();
-        return $this->response->create($client->getResponse()->getBody());
+
+        return $this->getResponse()->create($client->getResponse()->getBody());
     }
 
     /**
