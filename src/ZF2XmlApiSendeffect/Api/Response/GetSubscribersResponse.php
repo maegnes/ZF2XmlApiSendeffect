@@ -38,9 +38,11 @@ class GetSubscribersResponse extends BaseResponse implements ResponseInterface
         $response = new self();
         $response->setStatus($parent->getStatus());
         $response->setErrorMessage($parent->getErrorMessage());
-        $response->setCount($data['count']);
-        if($response->getCount() > 0) {
-            $response->setSubscribers($data['subscriberlist']['item']);
+        if (isset($data['count'])) {
+            $response->setCount($data['count']);
+            if($response->getCount() > 0) {
+                $response->setSubscribers($data['subscriberlist']['item']);
+            }
         }
         return $response;
     }
