@@ -103,6 +103,28 @@ class AbstractServiceTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test the services setters and getters
+     */
+    public function testSettersAndGetters()
+    {
+        $email = 'MyEMail@Address.de';
+        $listId = 12333;
+
+        /** @var AbstractService $mock */
+        $mock = $this->getMockForAbstractClass('ZF2XmlApiSendeffect\Service\AbstractService', $this->getUsernameAndToken());
+
+        // Test default values
+        $this->assertNull($mock->getMailingList());
+        $this->assertNull($mock->getEmailAddress());
+
+        $mock->setEmailAddress($email);
+        $mock->setMailingList($listId);
+
+        $this->assertEquals($mock->getEmailAddress(), $email);
+        $this->assertEquals($mock->getMailingList(), $listId);
+    }
+
+    /**
      * provide params data for the constructor
      *
      * @return array

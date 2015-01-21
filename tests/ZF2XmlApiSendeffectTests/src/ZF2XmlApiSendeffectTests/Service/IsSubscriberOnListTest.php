@@ -3,19 +3,19 @@
 namespace ZF2XmlApiSendeffectTest\Service;
 
 use PHPUnit_Framework_TestCase;
-use ZF2XmlApiSendeffect\Service\DeleteSubscriber;
+use ZF2XmlApiSendeffect\Service\IsSubscriberOnList;
 
 /**
- * Class DeleteSubscriberTest
+ * Class IsSubscriberOnList
  *
  * @package ZF2XmlApiSendeffectTest\Service
  * @author Magnus Buk <MagnusBuk@gmx.de>
  */
-class DeleteSubscriberTest extends PHPUnit_Framework_TestCase
+class IsSubscriberOnListTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var DeleteSubscriber
+     * @var IsSubscriberOnList
      */
     public $service = null;
 
@@ -24,7 +24,7 @@ class DeleteSubscriberTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->service = new DeleteSubscriber('PHPUNIT', 'TOKEN');
+        $this->service = new IsSubscriberOnList('PHPUNIT', 'TOKEN');
     }
 
     /**
@@ -41,7 +41,7 @@ class DeleteSubscriberTest extends PHPUnit_Framework_TestCase
     public function testInit()
     {
         $this->service->init();
-        $this->assertEquals($this->service->getRequestMethod(), 'DeleteSubscriber');
+        $this->assertEquals($this->service->getRequestMethod(), 'IsSubscriberOnList');
         $this->assertEquals($this->service->getRequestType(), 'subscribers');
     }
 }

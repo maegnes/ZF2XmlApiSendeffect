@@ -47,25 +47,6 @@ class AddSubscriberToListTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the services setters and getters
-     */
-    public function testSettersAndGetters()
-    {
-        $email = 'MyEMail@Address.de';
-        $listId = 12333;
-
-        // Test default values
-        $this->assertNull($this->service->getMailingList());
-        $this->assertNull($this->service->getEmailAddress());
-
-        $this->service->setEmailAddress($email);
-        $this->service->setMailingList($listId);
-
-        $this->assertEquals($this->service->getEmailAddress(), $email);
-        $this->assertEquals($this->service->getMailingList(), $listId);
-    }
-
-    /**
      * Test custom fields attachment
      */
     public function testCustomFields()
