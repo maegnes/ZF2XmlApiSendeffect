@@ -25,13 +25,20 @@ class HttpRequest implements RequestInterface
     public $response = null;
 
     /**
+     * @var Client
+     */
+    public $client = null;
+
+    /**
      * @param string $url
+     * @param Client $client
      * @param ResponseInterface $response
      */
-    public function __construct($url = null, ResponseInterface $response = null)
+    public function __construct($url = null, Client $client, ResponseInterface $response = null)
     {
         $this->setUrl($url);
         $this->setResponse($response);
+        $this->setClient($client);
     }
 
     /**
@@ -46,7 +53,7 @@ class HttpRequest implements RequestInterface
         if (is_null($this->getUrl())) {
             throw new Exception('No XmlApiSendEffect URL is given!');
         }
-        $client = new Client($this->getUrl());
+        $client = $this->getClient();
         $client->setMethod('POST');
         $client->setRawBody($data);
         $client->setOptions(array('sslverifypeer' => false));
@@ -84,5 +91,21 @@ class HttpRequest implements RequestInterface
     public function getResponse()
     {
         return $this->response;
+    }
+
+    /**
+     * @param Client $client
+     */
+    public function setClient(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

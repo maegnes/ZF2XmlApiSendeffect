@@ -5,6 +5,7 @@ namespace ZF2XmlApiSendeffect\Factory\Service;
 use ZF2XmlApiSendeffect\Api\Request\HttpRequest;
 use ZF2XmlApiSendeffect\Converter\XmlConverter;
 use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
+use Zend\Http\Client;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Exception;
@@ -61,7 +62,13 @@ class AbstractServiceFactory implements FactoryInterface
         /** @var \ZF2XmlApiSendeffect\Service\AbstractService $service */
         $service = new $className($config['username'], $config['usertoken']);
         $service->init();
-        $service->setRequest(new HttpRequest($config['apiUrl'], $response));
+        $service->setRequest(
+            new HttpRequest(
+                $config['apiUrl'],
+                new Client($config['apiUrl']),
+                $response
+            )
+        );
         $service->setConverter(new XmlConverter());
         return $service;
     }
