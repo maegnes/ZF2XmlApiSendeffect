@@ -10,15 +10,6 @@ namespace ZF2XmlApiSendeffect\Service;
  */
 class DeleteSubscriber extends AbstractService
 {
-    /**
-     * @var string
-     */
-    public $emailAddress = null;
-
-    /**
-     * @var int
-     */
-    public $mailingList = null;
 
     /**
      * Init default fields
@@ -48,37 +39,5 @@ class DeleteSubscriber extends AbstractService
             )
         );
         return $result;
-    }
-
-    /**
-     * @param string $emailAddress
-     */
-    public function setEmailAddress($emailAddress)
-    {
-        $this->emailAddress = $emailAddress;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->emailAddress;
-    }
-
-    /**
-     * @param int $mailingList
-     */
-    public function setMailingList($mailingList)
-    {
-        $this->mailingList = $mailingList;
-    }
-
-    /**
-     * @return int
-     */
-    public function getMailingList()
-    {
-        return $this->mailingList;
     }
 }

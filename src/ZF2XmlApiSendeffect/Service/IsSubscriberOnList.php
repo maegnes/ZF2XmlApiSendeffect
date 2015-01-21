@@ -12,16 +12,6 @@ class IsSubscriberOnList extends AbstractService
 {
 
     /**
-     * @var int
-     */
-    public $mailingList = null;
-
-    /**
-     * @var string
-     */
-    public $emailAddress = null;
-
-    /**
      * Init default fields
      */
     public function init()
@@ -49,37 +39,5 @@ class IsSubscriberOnList extends AbstractService
             )
         );
         return $result;
-    }
-
-    /**
-     * @param string $emailAddress
-     */
-    public function setEmailAddress($emailAddress)
-    {
-        $this->emailAddress = $emailAddress;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->emailAddress;
-    }
-
-    /**
-     * @param int $mailingList
-     */
-    public function setMailingList($mailingList)
-    {
-        $this->mailingList = $mailingList;
-    }
-
-    /**
-     * @return int
-     */
-    public function getMailingList()
-    {
-        return $this->mailingList;
     }
 }

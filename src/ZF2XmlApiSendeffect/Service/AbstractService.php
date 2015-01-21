@@ -61,6 +61,16 @@ abstract class AbstractService implements EventManagerAwareInterface
     public $eventManager = null;
 
     /**
+     * @var int
+     */
+    public $mailingList = null;
+
+    /**
+     * @var string
+     */
+    public $emailAddress = null;
+
+    /**
      * Populate given data to output array
      *
      * @return mixed
@@ -240,5 +250,37 @@ abstract class AbstractService implements EventManagerAwareInterface
     public function getConverter()
     {
         return $this->converter;
+    }
+
+    /**
+     * @param string $emailAddress
+     */
+    public function setEmailAddress($emailAddress)
+    {
+        $this->emailAddress = $emailAddress;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmailAddress()
+    {
+        return $this->emailAddress;
+    }
+
+    /**
+     * @param int $mailingList
+     */
+    public function setMailingList($mailingList)
+    {
+        $this->mailingList = $mailingList;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMailingList()
+    {
+        return $this->mailingList;
     }
 }

@@ -10,20 +10,11 @@ namespace ZF2XmlApiSendeffect\Service;
  */
 class AddSubscriberToList extends AbstractService
 {
-    /**
-     * @var string
-     */
-    public $emailAddress = null;
-
-    /**
-     * @var int
-     */
-    public $mailingList = null;
 
     /**
      * @var array
      */
-    public $customFields = null;
+    public $customFields = array();
 
     /**
      * @var string
@@ -44,58 +35,26 @@ class AddSubscriberToList extends AbstractService
      * Populate data
      *
      * @return array|mixed
-     * @todo - build hydrator
+     * @todo - build hydrator?
      */
     public function populate()
     {
-        $result = array(
+        $result = [
             'username'      => $this->getUserName(),
             'usertoken'     => $this->getUserToken(),
             'requesttype'   => $this->getRequestType(),
             'requestmethod' => $this->getRequestMethod(),
-            'details'       => array(
+            'details'       => [
                 'emailaddress' => $this->getEmailAddress(),
                 'mailinglist'  => $this->getMailingList(),
                 'format'       => $this->getFormat(),
                 'confirmed'    => '1',
-                'customfields' => array(
+                'customfields' => [
                     'item' => $this->getCustomFields()
-                )
-            )
-        );
+                ]
+            ]
+        ];
         return $result;
-    }
-
-    /**
-     * @param string $emailAddress
-     */
-    public function setEmailAddress($emailAddress)
-    {
-        $this->emailAddress = $emailAddress;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->emailAddress;
-    }
-
-    /**
-     * @param int $mailingList
-     */
-    public function setMailingList($mailingList)
-    {
-        $this->mailingList = $mailingList;
-    }
-
-    /**
-     * @return int
-     */
-    public function getMailingList()
-    {
-        return $this->mailingList;
     }
 
     /**
