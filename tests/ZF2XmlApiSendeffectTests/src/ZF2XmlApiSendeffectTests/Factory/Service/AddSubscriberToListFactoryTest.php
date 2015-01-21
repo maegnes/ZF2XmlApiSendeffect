@@ -10,6 +10,7 @@ use ZF2XmlApiSendeffect\Service\AddSubscriberToList;
  * Tests for the AddSubscriberToListFactory
  *
  * @package ZF2XmlApiSendeffectTest\Factory\Service
+ * @author Magnus Buk <MagnusBuk@gmx.de>
  */
 class AddSubscriberToListFactoryTest extends PHPUnit_Framework_TestCase
 {

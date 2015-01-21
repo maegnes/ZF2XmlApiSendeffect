@@ -10,6 +10,7 @@ use ZF2XmlApiSendeffect\Service\IsSubscriberOnList;
  * Tests for the IsSubscriberOnListFactory
  *
  * @package ZF2XmlApiSendeffectTest\Factory\Service
+ * @author Magnus Buk <MagnusBuk@gmx.de>
  */
 class IsSubscriberOnListFactoryTest extends PHPUnit_Framework_TestCase
 {

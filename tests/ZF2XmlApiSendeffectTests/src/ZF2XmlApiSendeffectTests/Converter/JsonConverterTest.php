@@ -5,6 +5,12 @@ namespace ZF2XmlApiSendeffectTest\Converter;
 use PHPUnit_Framework_TestCase;
 use ZF2XmlApiSendeffect\Converter\JsonConverter;
 
+/**
+ * Class JsonConverterTest
+ *
+ * @package ZF2XmlApiSendeffectTest\Converter
+ * @author Magnus Buk <MagnusBuk@gmx.de>
+ */
 class JsonConverterTest extends PHPUnit_Framework_TestCase
 {
     /**

@@ -95,14 +95,10 @@ abstract class AbstractService implements EventManagerAwareInterface
 
         $response = $this->getRequest()->send($data);
 
-        // Create event name based on the selected service
-        $classDetails = explode('\\', get_class($this));
-        $eventName = $classDetails[(count($classDetails) - 1)] . 'Success';
-
         // If the call was successful, throw event
         if ($response->isSuccess()) {
             $this->getEventManager()->trigger(
-                $eventName,
+                $this->createEventName(),
                 null,
                 [
                     'service' => $this,
@@ -124,6 +120,18 @@ abstract class AbstractService implements EventManagerAwareInterface
     {
         $eventManager->addIdentifiers([get_called_class()]);
         $this->eventManager = $eventManager;
+    }
+
+    /**
+     * Creates the event name which should be thrown by the event manager
+     *
+     * @access public
+     * @return string
+     */
+    public function createEventName()
+    {
+        $classDetails = explode('\\', get_class($this));
+        return $classDetails[(count($classDetails) - 1)] . 'Success';
     }
 
     /**

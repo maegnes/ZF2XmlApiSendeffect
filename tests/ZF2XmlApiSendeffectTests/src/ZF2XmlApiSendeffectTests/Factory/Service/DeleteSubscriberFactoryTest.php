@@ -10,6 +10,7 @@ use ZF2XmlApiSendeffect\Service\DeleteSubscriber;
  * Tests for the DeleteSubscriberFactory
  *
  * @package ZF2XmlApiSendeffectTest\Factory\Service
+ * @author Magnus Buk <MagnusBuk@gmx.de>
  */
 class DeleteSubscriberFactoryTest extends PHPUnit_Framework_TestCase
 {
