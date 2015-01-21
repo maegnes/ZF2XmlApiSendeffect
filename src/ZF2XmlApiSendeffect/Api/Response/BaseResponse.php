@@ -43,7 +43,7 @@ class BaseResponse implements ResponseInterface
      * @param $data
      * @return self|boolean
      */
-    public static function create($data)
+    public function create($data)
     {
         $response = new self();
 

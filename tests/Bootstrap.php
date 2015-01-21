@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF2XmlApiSendeffect;
+namespace ZF2XmlApiSendeffectTest;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -20,7 +20,7 @@ class Bootstrap
      */
     public static function init()
     {
-
+        # Placeholder for some preparation stuff
     }
 }
 

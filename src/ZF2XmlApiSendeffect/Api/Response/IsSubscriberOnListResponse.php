@@ -23,7 +23,7 @@ class IsSubscriberOnListResponse extends BaseResponse implements ResponseInterfa
      * @param $data
      * @return self|boolean
      */
-    public static function create($data)
+    public function create($data)
     {
         $parent = parent::create($data);
 

@@ -10,7 +10,7 @@ namespace ZF2XmlApiSendeffect\Api\Response;
  */
 interface ResponseInterface
 {
-    public static function create($data);
+    public function create($data);
 
     public function isSuccess();
 }

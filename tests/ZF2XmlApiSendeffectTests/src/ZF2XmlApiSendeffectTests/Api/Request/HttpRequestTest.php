@@ -7,6 +7,12 @@ use ZF2XmlApiSendeffect\Api\Request\HttpRequest;
 use ZF2XmlApiSendeffect\Api\Response\BaseResponse;
 use InvalidArgumentException;
 
+/**
+ * Class HttpRequestTest
+ *
+ * @package ZF2XmlApiSendeffectTest\Api\Request
+ * @author Magnus Buk <MagnusBuk@gmx.de>
+ */
 class HttpRequestTest extends PHPUnit_Framework_TestCase
 {
 
@@ -30,7 +36,7 @@ class HttpRequestTest extends PHPUnit_Framework_TestCase
 
         $responseMock = $this->getMockBuilder('ZF2XmlApiSendeffect\Api\Response\BaseResponse')
             ->getMock();
-        $responseMock::staticExpects($this->once())
+        $responseMock->expects($this->once())
             ->method('create')
             ->will($this->returnValue($response));
 
