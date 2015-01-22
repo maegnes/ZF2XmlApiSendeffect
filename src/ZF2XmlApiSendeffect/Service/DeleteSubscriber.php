@@ -28,16 +28,16 @@ class DeleteSubscriber extends AbstractService
      */
     public function populate()
     {
-        $result = array(
+        $result = [
             'username'      => $this->getUserName(),
             'usertoken'     => $this->getUserToken(),
             'requesttype'   => $this->getRequestType(),
             'requestmethod' => $this->getRequestMethod(),
-            'details'       => array(
+            'details'       => [
                 'emailaddress' => $this->getEmailAddress(),
                 'mailinglist'  => $this->getMailingList(),
-            )
-        );
+            ]
+        ];
         return $result;
     }
 }

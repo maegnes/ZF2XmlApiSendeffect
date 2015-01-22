@@ -14,7 +14,7 @@ class AddSubscriberToList extends AbstractService
     /**
      * @var array
      */
-    public $customFields = array();
+    public $customFields = [];
 
     /**
      * @var string

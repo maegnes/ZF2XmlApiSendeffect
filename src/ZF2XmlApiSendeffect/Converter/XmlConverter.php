@@ -20,7 +20,7 @@ class XmlConverter implements ConverterInterface
      *
      * @return string
      */
-    public function convert($data = array())
+    public function convert($data = [])
     {
         $xml = Array2XML::createXML('xmlrequest', $data);
         return $xml->saveXML();

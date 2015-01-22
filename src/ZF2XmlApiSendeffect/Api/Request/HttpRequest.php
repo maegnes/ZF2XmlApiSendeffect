@@ -66,7 +66,7 @@ class HttpRequest implements RequestInterface
         $client = $this->getClient();
         $client->setMethod('POST');
         $client->setRawBody($this->getConverter()->convert($data));
-        $client->setOptions(array('sslverifypeer' => false));
+        $client->setOptions(['sslverifypeer' => false]);
         $client->send();
 
         return $this->getResponse()->create(

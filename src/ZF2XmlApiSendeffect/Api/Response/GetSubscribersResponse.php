@@ -22,7 +22,7 @@ class GetSubscribersResponse extends BaseResponse implements ResponseInterface
      *
      * @var array
      */
-    public $subscribers = array();
+    public $subscribers = [];
 
     /**
      * Factory - create the response

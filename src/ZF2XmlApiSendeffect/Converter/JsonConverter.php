@@ -17,7 +17,7 @@ class JsonConverter implements ConverterInterface
      *
      * @return string
      */
-    public function convert($data = array())
+    public function convert($data = [])
     {
         return json_encode($data);
     }

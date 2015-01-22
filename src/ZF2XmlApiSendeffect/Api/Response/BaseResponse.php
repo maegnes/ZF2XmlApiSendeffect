@@ -33,7 +33,7 @@ class BaseResponse implements ResponseInterface
     /**
      * @var array
      */
-    public $data = array();
+    public $data = [];
 
     /**
      * Factory - create the response
