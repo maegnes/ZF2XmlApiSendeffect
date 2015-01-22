@@ -6,6 +6,7 @@ use PHPUnit_Framework_TestCase;
 use ZF2XmlApiSendeffect\Api\Request\HttpRequest;
 use ZF2XmlApiSendeffect\Api\Response\BaseResponse;
 use InvalidArgumentException;
+use ZF2XmlApiSendeffect\Converter\XmlConverter;
 
 /**
  * Class HttpRequestTest
@@ -22,7 +23,7 @@ class HttpRequestTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $httpClientResponseMock->expects($this->once())
             ->method('getBody')
-            ->will($this->returnValue('RESPONSESTRING'));
+            ->will($this->returnValue('<xmlrequest/>'));
 
         // Create Zend\Http\Client mock
         $httpClientMock = $this->getMockBuilder('Zend\Http\Client')->disableOriginalConstructor()
@@ -43,7 +44,8 @@ class HttpRequestTest extends PHPUnit_Framework_TestCase
         $request = new HttpRequest(
             'http://a-dummy-url.com',
             $httpClientMock,
-            $responseMock
+            $responseMock,
+            new XmlConverter()
         );
 
         $response = $request->send([]);
@@ -67,7 +69,8 @@ class HttpRequestTest extends PHPUnit_Framework_TestCase
         $request = new HttpRequest(
             'http://a-dummy-url.com',
             $httpClientMock,
-            $responseMock
+            $responseMock,
+            new XmlConverter()
         );
 
         $request->setUrl(NULL);

@@ -4,6 +4,8 @@ namespace ZF2XmlApiSendeffectTest\Api\Response;
 
 use PHPUnit_Framework_TestCase;
 use ZF2XmlApiSendeffect\Api\Response\BaseResponse;
+use ZF2XmlApiSendeffect\Converter\ConverterInterface;
+use ZF2XmlApiSendeffect\Converter\XmlConverter;
 
 /**
  * Class BaseResponseTest
@@ -20,11 +22,17 @@ class BaseResponseTest extends PHPUnit_Framework_TestCase
     public $response = null;
 
     /**
+     * @var ConverterInterface
+     */
+    public $converter = null;
+
+    /**
      * Set up testing stuff
      */
     public function setUp()
     {
         $this->response = new BaseResponse();
+        $this->converter = new XmlConverter();
     }
 
     /**
@@ -51,7 +59,7 @@ class BaseResponseTest extends PHPUnit_Framework_TestCase
 EOF;
 
         /** @var BaseResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertTrue($response->isSuccess());
         $this->assertEquals($response->getData(), ['name' => 'PHPUNIT']);
     }
@@ -70,7 +78,7 @@ EOF;
 EOF;
 
         /** @var BaseResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertFalse($response->isSuccess());
         $this->assertNotEmpty($response->getErrorMessage());
         $this->assertCount(0, $response->getData());
@@ -84,10 +92,10 @@ EOF;
         $fakeData = <<<EOF
 <responseee>
     <status>NOT A VALID XML STRING</status>
-</response>
+</responseee>
 EOF;
 
         /** @var BaseResponse $response */
-        $this->assertFalse($this->response->create($fakeData));
+        $this->assertFalse($this->response->create($this->converter->reconvert($fakeData)));
     }
 }

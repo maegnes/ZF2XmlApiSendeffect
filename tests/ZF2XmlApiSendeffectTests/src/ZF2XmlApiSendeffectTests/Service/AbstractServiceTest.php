@@ -92,7 +92,6 @@ class AbstractServiceTest extends PHPUnit_Framework_TestCase
             ->will($this->returnValue(true));
 
         // Inject dependencies
-        $mock->setConverter(new JsonConverter());
         $mock->setRequest($requestMock);
         $mock->setEventManager($eventManagerMock);
 

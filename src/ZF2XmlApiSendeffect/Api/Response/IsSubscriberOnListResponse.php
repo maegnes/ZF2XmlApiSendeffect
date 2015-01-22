@@ -5,7 +5,7 @@ namespace ZF2XmlApiSendeffect\Api\Response;
 /**
  * Class IsSubscriberOnListResponse
  *
- * @author Magnus Buk <MagnusBuk@gmx.de>
+ * @author  Magnus Buk <MagnusBuk@gmx.de>
  * @package ZF2XmlApiSendeffect\Api\Response
  */
 class IsSubscriberOnListResponse extends BaseResponse implements ResponseInterface
@@ -21,6 +21,7 @@ class IsSubscriberOnListResponse extends BaseResponse implements ResponseInterfa
      * Factory - create the response
      *
      * @param $data
+     *
      * @return self|boolean
      */
     public function create($data)
@@ -42,14 +43,16 @@ class IsSubscriberOnListResponse extends BaseResponse implements ResponseInterfa
      *
      * @param boolean $exists
      */
-    public function setUserExists($exists) {
+    public function setUserExists($exists)
+    {
         $this->userExists = $exists;
     }
 
     /**
      * @return bool
      */
-    public function userExists() {
+    public function userExists()
+    {
         return $this->userExists;
     }
 }

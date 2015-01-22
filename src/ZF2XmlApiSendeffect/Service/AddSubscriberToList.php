@@ -81,6 +81,7 @@ class AddSubscriberToList extends AbstractService
      * add custom fields to the request
      *
      * @param array $fields
+     *
      * @return void
      */
     public function addCustomFields($fields = [])

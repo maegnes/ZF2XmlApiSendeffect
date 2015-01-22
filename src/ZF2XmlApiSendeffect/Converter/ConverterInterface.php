@@ -16,4 +16,13 @@ interface ConverterInterface
      * @param mixed $data
      */
     public function convert($data);
+
+    /**
+     * Reconverts given data back to array
+     *
+     * @param $data
+     *
+     * @return mixed
+     */
+    public function reconvert($data);
 }

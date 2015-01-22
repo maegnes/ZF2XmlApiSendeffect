@@ -2,12 +2,11 @@
 
 namespace ZF2XmlApiSendeffect\Service;
 
-use ZF2XmlApiSendeffect\Api\Request\RequestInterface;
-use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
-use ZF2XmlApiSendeffect\Converter\ConverterInterface;
 use InvalidArgumentException;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
+use ZF2XmlApiSendeffect\Api\Request\RequestInterface;
+use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
 
 /**
  * Base class for all available API services
@@ -51,11 +50,6 @@ abstract class AbstractService implements EventManagerAwareInterface
     public $request = null;
 
     /**
-     * @var ConverterInterface
-     */
-    public $converter = null;
-
-    /**
      * @var EventManagerInterface
      */
     public $eventManager = null;
@@ -80,9 +74,11 @@ abstract class AbstractService implements EventManagerAwareInterface
     /**
      * @param string $userName
      * @param string $userToken
+     *
      * @throws InvalidArgumentException
      */
-    public function __construct($userName, $userToken) {
+    public function __construct($userName, $userToken)
+    {
         if (empty($userName)) {
             throw new InvalidArgumentException('No username for the ZF2XmlApiSendeffect given!');
         }
@@ -101,9 +97,7 @@ abstract class AbstractService implements EventManagerAwareInterface
      */
     public function send()
     {
-        $data = $this->getConverter()->convert($this->populate());
-
-        $response = $this->getRequest()->send($data);
+        $response = $this->getRequest()->send($this->populate());
 
         // If the call was successful, throw event
         if ($response->isSuccess()) {
@@ -111,7 +105,7 @@ abstract class AbstractService implements EventManagerAwareInterface
                 $this->createEventName(),
                 null,
                 [
-                    'service' => $this,
+                    'service'  => $this,
                     'response' => $response
                 ]
             );
@@ -234,22 +228,6 @@ abstract class AbstractService implements EventManagerAwareInterface
     public function getRequest()
     {
         return $this->request;
-    }
-
-    /**
-     * @param ConverterInterface $converter
-     */
-    public function setConverter(ConverterInterface $converter)
-    {
-        $this->converter = $converter;
-    }
-
-    /**
-     * @return ConverterInterface
-     */
-    public function getConverter()
-    {
-        return $this->converter;
     }
 
     /**

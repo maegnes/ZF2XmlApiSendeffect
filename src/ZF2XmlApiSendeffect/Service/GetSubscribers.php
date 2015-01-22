@@ -35,8 +35,8 @@ class GetSubscribers extends AbstractService
             'requestmethod' => $this->getRequestMethod(),
             'details'       => array(
                 'searchinfo' => array(
-                    'List' => $this->getMailingList(),
-                    'Email'  => $this->getEmailAddress()
+                    'List'  => $this->getMailingList(),
+                    'Email' => $this->getEmailAddress()
                 )
             )
         );

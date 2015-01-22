@@ -2,8 +2,6 @@
 
 namespace ZF2XmlApiSendeffect\Api\Response;
 
-use LSS\XML2Array;
-
 /**
  * Convert API Response to object
  *
@@ -41,6 +39,7 @@ class BaseResponse implements ResponseInterface
      * Factory - create the response
      *
      * @param $data
+     *
      * @return self|boolean
      */
     public function create($data)
@@ -49,12 +48,11 @@ class BaseResponse implements ResponseInterface
 
         // Parse XML
         try {
-            $data = XML2Array::createArray($data);
             $response->setStatus($data['response']['status']);
             if (isset($data['response']['errormessage'])) {
                 $response->setErrormessage($data['response']['errormessage']);
             }
-            if(isset($data['response']['data'])) {
+            if (isset($data['response']['data'])) {
                 $response->setData($data['response']['data']);
             }
             return $response;

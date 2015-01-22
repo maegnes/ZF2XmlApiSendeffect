@@ -4,6 +4,8 @@ namespace ZF2XmlApiSendeffectTest\Api\Response;
 
 use PHPUnit_Framework_TestCase;
 use ZF2XmlApiSendeffect\Api\Response\IsSubscriberOnListResponse;
+use ZF2XmlApiSendeffect\Converter\ConverterInterface;
+use ZF2XmlApiSendeffect\Converter\XmlConverter;
 
 /**
  * Class IsSubscriberOnListResponseTest
@@ -20,11 +22,17 @@ class IsSubscriberOnListResponseTest extends PHPUnit_Framework_TestCase
     public $response = null;
 
     /**
+     * @var ConverterInterface
+     */
+    public $converter = null;
+
+    /**
      * Set up testing stuff
      */
     public function setUp()
     {
         $this->response = new IsSubscriberOnListResponse();
+        $this->converter = new XmlConverter();
     }
 
     /**
@@ -49,7 +57,7 @@ class IsSubscriberOnListResponseTest extends PHPUnit_Framework_TestCase
 EOF;
 
         /** @var IsSubscriberOnListResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertTrue($response->isSuccess());
         $this->assertTrue($response->userExists());
     }
@@ -68,7 +76,7 @@ EOF;
 EOF;
 
         /** @var IsSubscriberOnListResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertFalse($response->isSuccess());
         $this->assertFalse($response->userExists());
         $this->assertEquals('Kontakt existiert nicht.', $response->getErrorMessage());

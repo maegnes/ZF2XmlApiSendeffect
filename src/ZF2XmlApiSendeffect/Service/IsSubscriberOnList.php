@@ -35,7 +35,7 @@ class IsSubscriberOnList extends AbstractService
             'requestmethod' => $this->getRequestMethod(),
             'details'       => array(
                 'emailaddress' => $this->getEmailAddress(),
-                'listids'  => $this->getMailingList()
+                'listids'      => $this->getMailingList()
             )
         );
         return $result;

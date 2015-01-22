@@ -4,6 +4,8 @@ namespace ZF2XmlApiSendeffectTest\Api\Response;
 
 use PHPUnit_Framework_TestCase;
 use ZF2XmlApiSendeffect\Api\Response\GetSubscribersResponse;
+use ZF2XmlApiSendeffect\Converter\ConverterInterface;
+use ZF2XmlApiSendeffect\Converter\XmlConverter;
 
 /**
  * Class GetSubscribersResponseTest
@@ -20,11 +22,17 @@ class GetSubscribersResponseTest extends PHPUnit_Framework_TestCase
     public $response = null;
 
     /**
+     * @var ConverterInterface
+     */
+    public $converter = null;
+
+    /**
      * Set up testing stuff
      */
     public function setUp()
     {
         $this->response = new GetSubscribersResponse();
+        $this->converter = new XmlConverter();
     }
 
     /**
@@ -55,7 +63,7 @@ class GetSubscribersResponseTest extends PHPUnit_Framework_TestCase
 EOF;
 
         /** @var GetSubscribersResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertTrue($response->isSuccess());
         $this->assertEquals(2, $response->getCount());
     }
@@ -74,7 +82,7 @@ EOF;
 EOF;
 
         /** @var GetSubscribersResponse $response */
-        $response = $this->response->create($fakeData);
+        $response = $this->response->create($this->converter->reconvert($fakeData));
         $this->assertFalse($response->isSuccess());
         $this->assertNotEmpty($response->getErrorMessage());
         $this->assertEquals('NICHT AUF DER LISTE!', $response->getErrorMessage());

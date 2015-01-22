@@ -2,13 +2,13 @@
 
 namespace ZF2XmlApiSendeffect\Factory\Service;
 
-use ZF2XmlApiSendeffect\Api\Request\HttpRequest;
-use ZF2XmlApiSendeffect\Converter\XmlConverter;
-use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
+use Exception;
 use Zend\Http\Client;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Exception;
+use ZF2XmlApiSendeffect\Api\Request\HttpRequest;
+use ZF2XmlApiSendeffect\Api\Response\ResponseInterface;
+use ZF2XmlApiSendeffect\Converter\XmlConverter;
 
 class AbstractServiceFactory implements FactoryInterface
 {
@@ -38,6 +38,7 @@ class AbstractServiceFactory implements FactoryInterface
      * Create service
      *
      * @param ServiceLocatorInterface $serviceLocator
+     *
      * @throws Exception
      * @return mixed
      */
@@ -49,13 +50,13 @@ class AbstractServiceFactory implements FactoryInterface
 
         $response = new $this->responseClass;
 
-        if(empty($this->class)) {
+        if (empty($this->class)) {
             throw new Exception(
                 'No class to instantiate given. Did you define property $class in the child class of the factory?'
             );
         }
 
-        if(!$response instanceof ResponseInterface) {
+        if (!$response instanceof ResponseInterface) {
             throw new Exception('No valid Response Object created!');
         }
 
@@ -66,10 +67,10 @@ class AbstractServiceFactory implements FactoryInterface
             new HttpRequest(
                 $config['apiUrl'],
                 new Client($config['apiUrl']),
-                $response
+                $response,
+                new XmlConverter()
             )
         );
-        $service->setConverter(new XmlConverter());
         return $service;
     }
 }

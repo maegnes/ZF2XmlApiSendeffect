@@ -57,7 +57,6 @@ class IsSubscriberOnListFactoryTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('ZF2XmlApiSendeffect\Service\IsSubscriberOnList', $service);
         $this->assertInstanceOf('ZF2XmlApiSendeffect\Api\Request\HttpRequest', $service->getRequest());
-        $this->assertInstanceOf('ZF2XmlApiSendeffect\Converter\XmlConverter', $service->getConverter());
     }
 
     /**

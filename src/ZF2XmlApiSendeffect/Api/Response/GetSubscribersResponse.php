@@ -5,7 +5,7 @@ namespace ZF2XmlApiSendeffect\Api\Response;
 /**
  * Class GetSubscribersResponse
  *
- * @author Magnus Buk <MagnusBuk@gmx.de>
+ * @author  Magnus Buk <MagnusBuk@gmx.de>
  * @package ZF2XmlApiSendeffect\Api\Response
  */
 class GetSubscribersResponse extends BaseResponse implements ResponseInterface
@@ -28,6 +28,7 @@ class GetSubscribersResponse extends BaseResponse implements ResponseInterface
      * Factory - create the response
      *
      * @param $data
+     *
      * @return self|boolean
      */
     public function create($data)
@@ -40,7 +41,7 @@ class GetSubscribersResponse extends BaseResponse implements ResponseInterface
         $response->setErrorMessage($parent->getErrorMessage());
         if (isset($data['count'])) {
             $response->setCount($data['count']);
-            if($response->getCount() > 0) {
+            if ($response->getCount() > 0) {
                 $response->setSubscribers($data['subscriberlist']['item']);
             }
         }
