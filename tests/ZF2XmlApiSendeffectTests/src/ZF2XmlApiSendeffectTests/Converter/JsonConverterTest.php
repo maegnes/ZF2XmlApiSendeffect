@@ -40,4 +40,13 @@ class JsonConverterTest extends PHPUnit_Framework_TestCase
         $this->assertJson($this->converter->convert($convertData));
         $this->assertEquals(json_encode($convertData), $this->converter->convert($convertData));
     }
+
+    /**
+     * Test correct json reconversion
+     */
+    public function testJsonReconversion()
+    {
+        $convertData = ['name' => 'PHP', 'surname' => 'UNIT'];
+        $this->assertEquals($convertData, $this->converter->reconvert(json_encode($convertData)));
+    }
 }

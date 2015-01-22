@@ -34,10 +34,18 @@ class XmlConverterTest extends PHPUnit_Framework_TestCase
     /**
      * Test correct json conversion
      */
-    public function testJsonConversion()
+    public function testXmlConversion()
     {
         $convertData = ['name' => 'PHP', 'surname' => 'UNIT'];
         $shouldBe = '<?xml version="1.0" encoding="UTF-8"?><xmlrequest><name>PHP</name><surname>UNIT</surname></xmlrequest>';
         $this->assertXmlStringEqualsXmlString($this->converter->convert($convertData), $shouldBe);
+    }
+
+    public function testXmlReconversion()
+    {
+        $reconvertData = '<?xml version="1.0" encoding="UTF-8"?><xmlrequest><name>PHP</name><surname>UNIT</surname></xmlrequest>';
+        $shouldBe = ['xmlrequest' => ['name' => 'PHP', 'surname' => 'UNIT']];
+        $this->assertTrue(is_array($this->converter->reconvert($reconvertData)));
+        $this->assertEquals($shouldBe, $this->converter->reconvert($reconvertData));
     }
 }

@@ -31,6 +31,6 @@ class JsonConverter implements ConverterInterface
      */
     public function reconvert($data)
     {
-        return json_decode($data);
+        return json_decode($data, true);
     }
 }
