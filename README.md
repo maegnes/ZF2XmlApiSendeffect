@@ -156,8 +156,3 @@ Checks if the given user is on the given subscribers list
         $userExists = $response->userExists(); # true/false
 
     }
-
-ToDo
---------
-- Add Unit Tests
-- Add travis-ci support
